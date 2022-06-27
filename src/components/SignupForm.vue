@@ -6,6 +6,8 @@
       <input type="email" required v-model="email" />
       <label for="">Password:</label>
       <input type="password" required v-model="password" />
+      <label for="">Confirm password:</label>
+      <input type="password" required v-model="confirmPassword" />
       <label for="">Role:</label>
       <select v-model="selectedRole">
         <option v-for="(role, index) in roles" :key="index" :value="role.value">
@@ -39,6 +41,7 @@ export default {
     return {
       email: "",
       password: "",
+      confirmPassword: "",
       selectedRole: "developer",
       terms: false,
       tempSkill: "",
@@ -47,23 +50,26 @@ export default {
         { title: "Web Developer", value: "developer" },
         { title: "Designer", value: "designer" },
         { title: "Tester", value: "tester" },
+        { title: "Marketing", value: "marketing" },
       ],
     };
   },
   methods: {
     signUp() {
-      console.log(
-        this.email,
-        this.password,
-        this.selectedRole,
-        this.skills,
-        this.terms
-      );
-      this.email = "";
-      this.password = "";
-      this.selectedRole = "developer";
-      this.skill = [];
-      this.terms = false;
+      if (this.password != this.confirmPassword) {
+        alert("Passwords do not match!");
+        this.password = "";
+        this.confirmPassword = "";
+      } else {
+        alert("Sign up successful!");
+        this.email = "";
+        this.password = "";
+        this.confirmPassword = "";
+        this.terms = false;
+        this.selectedRole = "developer";
+        this.tempSkill = "";
+        this.skill = [];
+      }
     },
     addSkill(e) {
       if (e.key === "," && this.tempSkill) {
