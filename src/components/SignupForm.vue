@@ -119,6 +119,10 @@ input {
   border-bottom: 1px solid #ddd;
   color: #555;
   outline: none;
+  transition: all 0.3s;
+}
+input:focus {
+  border-bottom: 1px solid #999;
 }
 select {
   display: block;
