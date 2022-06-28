@@ -1,32 +1,36 @@
 <template>
   <div id="app">
-    <signup-form />
+    <nav>
+      <router-link to="/signup">Sign Up</router-link> |
+      <router-link to="/signin">Sign In</router-link>
+    </nav>
+    <router-view />
   </div>
 </template>
-
-<script>
-import SignupForm from "./components/SignupForm.vue";
-
-export default {
-  name: "App",
-  components: {
-    SignupForm,
-  },
-};
-</script>
 
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
-  background: #eee;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  width: 100%;
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
-  min-height: 100vh;
+}
+
+nav {
+  padding: 30px;
+}
+
+nav a {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+nav a.router-link-exact-active {
+  color: #42b983;
 }
 </style>
