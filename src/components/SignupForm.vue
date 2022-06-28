@@ -91,7 +91,7 @@ export default {
 <style>
 .signup-form {
   width: 50%;
-  background: #fff;
+  background: rgb(245, 245, 245);
   border-radius: 30px;
 }
 form {
@@ -102,7 +102,7 @@ form {
   border-radius: 10px;
 }
 label {
-  color: #aaa;
+  color: #777;
   display: inline-block;
   margin: 25px 0 15px;
   font-size: 0.6rem;
@@ -120,6 +120,7 @@ input {
   color: #555;
   outline: none;
   transition: all 0.3s;
+  background: rgb(245, 245, 245);
 }
 input:focus {
   border-bottom: 1px solid #999;
@@ -132,6 +133,7 @@ select {
   border: none;
   border-bottom: 1px solid #ddd;
   color: #555;
+  background: rgb(245, 245, 245);
 }
 .terms {
   display: flex;
@@ -152,13 +154,16 @@ select {
   display: inline-block;
   margin: 20px 10px 0 0;
   padding: 6px 12px;
-  background: #eee;
+  background: #ddd;
   border-radius: 20px;
   font-size: 12px;
   letter-spacing: 1px;
   font-weight: bold;
   color: #777;
   cursor: pointer;
+}
+span a {
+  margin-right: 24px;
 }
 button {
   background: #0b6dff;
@@ -167,6 +172,7 @@ button {
   margin-top: 20px;
   color: #fff;
   border-radius: 20px;
+  cursor: pointer;
 }
 .submit {
   text-align: center;
